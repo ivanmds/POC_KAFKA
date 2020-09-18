@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PocKafka", "PocKafka\PocKafka.csproj", "{DB5C891A-0292-4D8B-870E-14139BC0EAA5}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{0933593B-D3F3-4424-9DE0-0F85215F3782}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB5C891A-0292-4D8B-870E-14139BC0EAA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB5C891A-0292-4D8B-870E-14139BC0EAA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB5C891A-0292-4D8B-870E-14139BC0EAA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB5C891A-0292-4D8B-870E-14139BC0EAA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0933593B-D3F3-4424-9DE0-0F85215F3782}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0933593B-D3F3-4424-9DE0-0F85215F3782}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0933593B-D3F3-4424-9DE0-0F85215F3782}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0933593B-D3F3-4424-9DE0-0F85215F3782}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA9EC116-BFB4-4BEC-AB65-4916BE69AE79}
+	EndGlobalSection
+EndGlobal
