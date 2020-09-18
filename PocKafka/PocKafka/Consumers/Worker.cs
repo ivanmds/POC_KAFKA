@@ -21,13 +21,8 @@ namespace PocKafka.Consumers
         {
             var conf = new ConsumerConfig
             {
-                GroupId = "test-consumer-group",
+                GroupId = "test-consumer-group2",
                 BootstrapServers = "localhost:9092",
-                // Note: The AutoOffsetReset property determines the start offset in the event
-                // there are not yet any committed offsets for the consumer group for the
-                // topic/partitions of interest. By default, offsets are committed
-                // automatically, so in this example, consumption will only start from the
-                // earliest message in the topic 'my-topic' the first time you run the program.
                 AutoOffsetReset = AutoOffsetReset.Earliest
             };
 
@@ -51,7 +46,7 @@ namespace PocKafka.Consumers
 
         public override void Dispose()
         {
-            consumer.Close();
+            consumer?.Close();
             base.Dispose();
         }
     }

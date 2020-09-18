@@ -1,7 +1,7 @@
 ﻿using Confluent.Kafka;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace PocKafka.Controllers
@@ -10,6 +10,8 @@ namespace PocKafka.Controllers
     [ApiController]
     public class Test : ControllerBase
     {
+        private static int count;
+
         public async Task<IActionResult> Get()
         {
             var config = new ProducerConfig { BootstrapServers = "localhost:9092" };
@@ -21,7 +23,10 @@ namespace PocKafka.Controllers
             {
                 try
                 {
-                    var dr = await p.ProduceAsync("test-topic", new Message<Null, string> { Value = "test" });
+                    ++count;
+                    var msg2 = new Message2 { Description = $"Description {count}", Name = $"Name {count}" };
+                    var msg = new Message<Null, string> { Value = JsonSerializer.Serialize(msg2) };
+                    var dr = await p.ProduceAsync("test-topic", msg);
                     Console.WriteLine($"Delivered '{dr.Value}' to '{dr.TopicPartitionOffset}'");
                 }
                 catch (ProduceException<Null, string> e)
